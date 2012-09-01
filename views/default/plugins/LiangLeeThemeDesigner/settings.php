@@ -19,6 +19,15 @@ $plug_rel = LiangLee_release('LiangLeeThemeDesigner');
 **/
 LiangLee_inc_js('LiangLeeThemeDesigner','jquery/farbtastic.js');
 /*
+?>
+ <script type="text/javascript" charset="utf-8">
+  $(document).ready(function() {
+    $('#demo').hide();
+    $('#picker').farbtastic('#color');
+  });
+  </script>
+
+<?php
 * Regiser Settings for topbar logo
 */
 
@@ -47,7 +56,8 @@ echo "<br />\n";
 */
 echo elgg_view("input/text", array(
 "name" => "params[Leethemed_header_bgorimg]", 
-"placeholder" => "color",
+“id” => “color”,
+"placeholder" => "#FFFFFF",
 "value" => $vars['entity']->Leethemed_header_bgorimg));
 
 echo "           </p>\n"; 
@@ -72,6 +82,7 @@ echo "<br />\n";
 */
 echo elgg_view("input/text", array(
 "name" => "params[Leethemed_header_bgcolor]", 
+“id” => “color”,
 "placeholder" => "#ffffff",
 "value" => $vars['entity']->Leethemed_header_bgcolor));
 
@@ -80,14 +91,6 @@ echo "            <p>\n";
 echo "<hr/>&nbsp;</p></td>\n"; 
 echo "          <td width=\"53\">&nbsp;&nbsp;&nbsp;</td>\n"; 
 echo "          <td width=\"452\"><h2>\n";
- echo elgg_echo('leethemed:clrl');
-echo "<br />\n";
-echo "      </h2>\n"; 
-echo "            <hr/>\n"; 
-echo "            <p>\n";
-echo elgg_echo('leethemed:clr:gen'); echo "</p>\n"; 
-echo "            <p>\n";
-LiangLee_view('LiangLeeThemeDesigner','colors/get');echo "      </p>\n"; 
 echo "            <hr/></td>\n"; 
 echo "        </tr>\n"; 
 echo "        <tr>\n"; 
@@ -109,7 +112,8 @@ echo "<p>\n";
 */
 echo elgg_view("input/text", array(
 "name" => "params[Leethemed_body_bgcolor]", 
-"placeholder" => "#fff",
+"placeholder" => "#ffffff",
+“id” => “color”,
 "value" => $vars['entity']->Leethemed_body_bgcolor));
 echo "     </p>\n"; 
 echo "              </p>\n"; 
@@ -125,7 +129,8 @@ echo "            <p>\n";
 */
 echo elgg_view("input/text", array(
 "name" => "params[Leethemed_search_br]", 
-"placeholder" => "#fff",
+"placeholder" => "#ffffff",
+“id” => “color”,
 "value" => $vars['entity']->Leethemed_search_br));
 echo "  </p>\n"; 
 echo "<p><hr/>\n"; 
@@ -159,6 +164,7 @@ echo elgg_echo('leethemed:logo:header:img:clr'); echo "<br />\n";
 echo elgg_view("input/text", array(
 "name" => "params[Leethemed_tbar_bgorcolor]", 
 "placeholder" => "image",
+“id” => “color”,
 "value" => $vars['entity']->Leethemed_tbar_bgorcolor));	
 echo "</p>\n"; 
 echo "          <p>\n";
